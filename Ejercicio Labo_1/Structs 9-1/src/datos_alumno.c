@@ -55,9 +55,13 @@ void mostrarDatos(datosAlumno datos)
 	printf("Su tercera nota fue: %d\n",datos.materiaTres);
 }
 
-void calcularPromedio(datosAlumno datos)
+float calcularPromedio(datosAlumno datos)
 {
+	float promedioCalculado;
+
 	datos.sumaNotas = datos.materiaUno + datos.materiaDos + datos.materiaTres;
 
-	datos.promedio = datos.sumaNotas / 3;
+	promedioCalculado = (float)datos.sumaNotas / 3;
+
+	return promedioCalculado;
 }

@@ -18,7 +18,7 @@ int main(void)
 	datosAlumno datosIngresados = ingresarDatos();
 
 	mostrarDatos(datosIngresados);
-	calcularPromedio(datosIngresados);
+	datosIngresados.promedio = calcularPromedio(datosIngresados);
 
 	printf("El promedio de %s, es de: %.2f\n",datosIngresados.nombre,datosIngresados.promedio);
 

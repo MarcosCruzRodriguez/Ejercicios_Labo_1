@@ -1,5 +1,5 @@
-22:06:40 **** Incremental Build of configuration Debug for project Cadena_caracteres 7-3 ****
+09:36:58 **** Incremental Build of configuration Debug for project Structs 9-1 ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Cadena_caracteres 7-3.o" "..\\src\\Cadena_caracteres 7-3.c" 
-gcc -o "Cadena_caracteres 7-3.exe" "src\\Cadena_caracteres 7-3.o" "src\\letras.o" 
-Info: Nothing to build for Cadena_caracteres 7-3
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\datos_alumno.o" "..\\src\\datos_alumno.c" 
+gcc -o "Structs 9-1.exe" "src\\Structs 9-1.o" "src\\datos_alumno.o" 
+Info: Nothing to build for Structs 9-1

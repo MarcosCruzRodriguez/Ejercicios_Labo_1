@@ -25,6 +25,6 @@ typedef struct {
 datosAlumno ingresarDatos();
 
 void mostrarDatos(datosAlumno datos);
-void calcularPromedio(datosAlumno datos);
+float calcularPromedio(datosAlumno datos);
 
 #endif /* DATOS_ALUMNO_H_ */

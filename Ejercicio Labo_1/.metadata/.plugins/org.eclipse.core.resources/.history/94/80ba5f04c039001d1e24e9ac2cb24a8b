@@ -1,0 +1,19 @@
+/*
+ ============================================================================
+ Marcos Cruz Rodriguez, Div D
+ Ejercicio 7-1 cadena de caracteres
+
+ Realizar funciones para validar y obtener:
+ -Alfanumericos, ej. ab555gT6
+ -Teléfonos, ej. 4XXX-XXXX
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	setbuf(stdin, NULL);
+	return EXIT_SUCCESS;
+}

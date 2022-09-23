@@ -1,0 +1,21 @@
+/*
+ * nombre_completo.c
+ *
+ *  Created on: 21 sep. 2022
+ *      Author: rodri
+ */
+
+#include "nombre_completo.h"
+
+void formarApellidoNombre(char* pNombre,char* pApellido,char* pCompleto)
+{
+	strcpy(pCompleto,pApellido);
+	strcat(pCompleto,", ");
+	strcat(pCompleto,pNombre);
+
+	strlwr(pCompleto);
+
+	printf("%s",pCompleto);
+
+	pCompleto[0] = toopper(pCompleto[0]);
+}

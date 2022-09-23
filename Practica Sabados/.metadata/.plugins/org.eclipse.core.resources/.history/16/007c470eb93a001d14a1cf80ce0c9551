@@ -1,0 +1,21 @@
+/*
+ * empleados_struct.h
+ *
+ *  Created on: 22 sep. 2022
+ *      Author: rodri
+ */
+
+#ifndef EMPLEADOS_STRUCT_H_
+#define EMPLEADOS_STRUCT_H_
+
+typedef struct {
+	char nombre[LARGO];
+	char appelido[LARGO];
+	char nombreCompleto[LARGO];
+	int legajo;
+	int edad;
+	int salario;
+}datosEmpleados;
+
+
+#endif /* EMPLEADOS_STRUCT_H_ */

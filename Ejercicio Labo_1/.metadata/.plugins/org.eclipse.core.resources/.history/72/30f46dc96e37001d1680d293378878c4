@@ -1,0 +1,24 @@
+/*
+ * empleados.c
+ *
+ *  Created on: 18 sep. 2022
+ *      Author: rodri
+ */
+
+#include "empleados.h"
+
+/*
+int inicializacionArray(int legajos[], int edad[], int salario[], int size, int valor)
+{
+	int retorno = 0;
+
+	if(legajos != NULL && size > 0)
+	{
+		for(int i = 0; i < size; i++)
+		{
+			legajos[i] = valor;
+		}
+		retorno = 1;
+	}
+	return retorno;
+}*/

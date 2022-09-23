@@ -1,0 +1,25 @@
+/*
+ * biblioteca_utn.h
+ *
+ *  Created on: 17 sep. 2022
+ *      Author: rodri
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+
+#ifndef BIBLIOTECA_UTN_H_
+#define BIBLIOTECA_UTN_H_
+
+/**
+ * @brief inicializar array con un valor predeterminado
+ * (limpia espacio de memoria)
+ * @param array
+ * @param size
+ * @param valor
+ * @return
+ */
+int inicializacionArray(int array[], int size, int valor);
+
+#endif /* BIBLIOTECA_UTN_H_ */

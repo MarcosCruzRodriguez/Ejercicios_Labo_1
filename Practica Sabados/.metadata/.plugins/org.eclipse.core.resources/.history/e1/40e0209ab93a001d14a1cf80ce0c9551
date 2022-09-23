@@ -1,0 +1,72 @@
+/*
+ * empleados_struct.c
+ *
+ *  Created on: 22 sep. 2022
+ *      Author: rodri
+ */
+
+#include "empleados_struct.h"
+
+void cargarDatos(datosEmpleados *ingresarDatos, int tam)
+{
+	for(int i = 0; i < 3; i++)
+	{
+		printf("Ingrese su nombre: \n");
+		fflush(stdin);
+		fgets(cargaDatos[i].nombre,LARGO,stdin);
+
+		largoNombre = strlen(cargaDatos[i].nombre);
+		cargaDatos[i].nombre[largoNombre-1] = '\0';
+
+		printf("Ingrese su apellido: \n");
+		fflush(stdin);
+		fgets(cargaDatos[i].appelido,LARGO,stdin);
+
+		largoApellido = strlen(cargaDatos[i].appelido);
+		cargaDatos[i].appelido[largoApellido-1] = '\0';
+
+		strcpy(cargaDatos[i].nombreCompleto,cargaDatos[i].appelido);
+		strcat(cargaDatos[i].nombreCompleto,", ");
+		strcat(cargaDatos[i].nombreCompleto,cargaDatos[i].nombre);
+
+		strlwr(cargaDatos[i].nombreCompleto);
+
+		//printf("El nombre ingresado es: %s\n",cargaDatos[i].nombreCompleto);
+		//strlen(cargaDatos[i].nombreCompleto);
+
+		cargaDatos[i].nombreCompleto[0] = toupper(cargaDatos[i].nombreCompleto[0]);
+
+		for(int j = 0; j < strlen(cargaDatos[i].nombreCompleto); j++)
+		{
+			if(isspace(cargaDatos[i].nombreCompleto[j]))
+			{
+				j++;
+				cargaDatos[i].nombreCompleto[j] = toupper(cargaDatos[i].nombreCompleto[j]);
+			}
+		}
+
+		printf("Ingrese los ultimos 4 digitos del legajo: \n");
+		scanf("%d",&cargaDatos[i].legajo);
+		while(cargaDatos[i].legajo < 1000 || cargaDatos[i].legajo > 9999)
+		{
+			printf("¡ERROR! Reingrese los ultimos 4 digitos del legajo: \n");
+			scanf("%d",&cargaDatos[i].legajo);
+		}
+
+		printf("Ingrese su edad: \n");
+		scanf("%d",&cargaDatos[i].edad);
+		while(cargaDatos[i].edad < 18)
+		{
+			printf("¡ERROR! Reingrese su edad: \n");
+			scanf("%d",&cargaDatos[i].edad);
+		}
+
+		printf("Ingrese su salario: \n");
+		scanf("%d",&cargaDatos[i].salario);
+		while(cargaDatos[i].salario < 1)
+		{
+			printf("¡ERROR! Reingrese su salario: \n");
+			scanf("%d",&cargaDatos[i].salario);
+		}
+	}
+}

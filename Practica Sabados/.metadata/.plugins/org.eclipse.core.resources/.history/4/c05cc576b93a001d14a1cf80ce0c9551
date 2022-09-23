@@ -1,0 +1,13 @@
+/*
+ * empleados_struct.c
+ *
+ *  Created on: 22 sep. 2022
+ *      Author: rodri
+ */
+
+#include "empleados_struct.h"
+
+void cargarDatos(datosEmpleados *ingresarDatos)
+{
+
+}

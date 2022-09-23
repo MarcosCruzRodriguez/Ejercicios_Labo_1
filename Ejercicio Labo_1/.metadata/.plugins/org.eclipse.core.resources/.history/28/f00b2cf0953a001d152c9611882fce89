@@ -1,0 +1,97 @@
+/*
+ ============================================================================
+ Name        : Structs.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include "datos_alumno.h"
+
+
+//void mostrarDatos(struct datosAlumno datosIngresados);
+
+int main(void)
+{
+	setbuf(stdout, NULL);
+
+	datosAlumno datosIngresados = ingresarDatos();
+
+	/*
+	cargaDatos.sumaNotas = cargaDatos.materiaUno + cargaDatos.materiaDos + cargaDatos.materiaTres;
+
+	cargaDatos.promedio = cargaDatos.sumaNotas / (float)3;
+
+	printf("El nombre es: %s\n",cargaDatos.nombre);
+	printf("Su primera nota fue: %d\n",cargaDatos.materiaUno);
+	printf("Su segunda nota fue: %d\n",cargaDatos.materiaDos);
+	printf("Su tercera nota fue: %d\n",cargaDatos.materiaTres);
+	printf("La suma de notas da: %d\n",cargaDatos.sumaNotas);
+	printf("El promedio de estas da: %.2f\n",cargaDatos.promedio);
+	*/
+	/*
+	for(int i = 0; i < 3; i++)
+	{
+		printf("Ingrese su nombre: \n");
+		fflush(stdin);
+		fgets(cargaDatos[i].nombre,LARGO,stdin);
+
+		largoNombre = strlen(cargaDatos[i].nombre);
+		cargaDatos[i].nombre[largoNombre-1] = '\0';
+
+		printf("Ingrese su apellido: \n");
+		fflush(stdin);
+		fgets(cargaDatos[i].apellido,LARGO,stdin);
+
+		largoApellido = strlen(cargaDatos[i].apellido);
+		cargaDatos[i].apellido[largoApellido-1] = '\0';
+
+		strcpy(cargaDatos[i].nombreCompleto,cargaDatos[i].apellido);
+		strcat(cargaDatos[i].nombreCompleto,", ");
+		strcat(cargaDatos[i].nombreCompleto,cargaDatos[i].nombre);
+
+		strlwr(cargaDatos[i].nombreCompleto);
+
+		//printf("El nombre ingresado es: %s\n",cargaDatos[i].nombreCompleto);
+		//strlen(cargaDatos[i].nombreCompleto);
+
+		cargaDatos[i].nombreCompleto[0] = toupper(cargaDatos[i].nombreCompleto[0]);
+
+		for(int j = 0; j < strlen(cargaDatos[i].nombreCompleto); j++)
+		{
+			if(isspace(cargaDatos[i].nombreCompleto[j]))
+			{
+				j++;
+				cargaDatos[i].nombreCompleto[j] = toupper(cargaDatos[i].nombreCompleto[j]);
+			}
+		}
+
+		printf("Ingrese la primer nota del alumno: \n");
+		scanf("%d",&cargaDatos[i].notaUno);
+		while(cargaDatos[i].notaUno < 1 || cargaDatos[i].notaUno > 10)
+		{
+			printf("Ingrese la primer nota del alumno: \n");
+			scanf("%d",&cargaDatos[i].notaUno);
+		}
+		printf("Ingrese la primer nota del alumno: \n");
+		scanf("%d",&cargaDatos[i].notaDos);
+		while(cargaDatos[i].notaDos < 1 || cargaDatos[i].notaDos > 10)
+		{
+			printf("Ingrese la primer nota del alumno: \n");
+			scanf("%d",&cargaDatos[i].notaDos);
+		}
+		printf("Ingrese la primer nota del alumno: \n");
+		scanf("%d",&cargaDatos[i].notaTres);
+		while(cargaDatos[i].notaTres < 1 || cargaDatos[i].notaTres > 10)
+		{
+			printf("Ingrese la primer nota del alumno: \n");
+			scanf("%d",&cargaDatos[i].notaTres);
+		}
+
+		printf("El nombre ingresado es: %s\n",cargaDatos[i].nombreCompleto);
+		*/
+	return 0;
+}
+

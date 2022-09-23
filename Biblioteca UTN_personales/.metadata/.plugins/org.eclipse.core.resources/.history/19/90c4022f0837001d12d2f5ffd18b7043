@@ -1,0 +1,58 @@
+/*
+ * biblioteca_utn.c
+ *
+ *  Created on: 17 sep. 2022
+ *      Author: rodri
+ */
+
+#include "biblioteca_utn.h"
+
+//inicializar array con un valor predeterminado
+int inicializacionArray(int array[], int size, int valor)
+{
+	int retorno = 0;
+
+	if(array != NULL && size > 0)
+	{
+		for(int i = 0; i < size; i++)
+		{
+			array[i] = valor;
+		}
+		retorno = 1;
+	}
+	return retorno;
+}
+
+//carga de valores, numeros en este caso
+void cargaValores(int array[], int size)
+{
+	for(int i = 0; i < size; i++)
+	{
+		printf("Ingrese un numero: \n");
+		scanf("%d",&array[i]);
+	}
+}
+
+/* Ejemplo de menu
+===============================================================================
+void menuPrincipal(int *eleccion, float hospedaje, float comida, float transporte, int arqueros, int defensores, int mediocampistas, int delanteros)
+{
+	printf("\n		Menu Principal\n"
+		   "\n"
+		   "1. Ingreso de los costos de Mantenimiento\n"
+		   "  Costo de Hospedaje -> $%.2f\n"
+		   "  Costo de Comida -> $%.2f\n"
+		   "  Costo de Transporte -> $%.2f\n",hospedaje,comida,transporte);
+	printf("2. Carga de jugadores\n"
+		   "  Arqueros -> %d\n"
+		   "  Defensores -> %d\n"
+		   "  Mediocampistas -> %d\n"
+		   "  Delanteros -> %d\n",arqueros,defensores,mediocampistas,delanteros);
+	printf("3. Realizar todos los calculos\n"
+		   "4. Informar todos los resultados\n"
+		   "5. Salir \n");
+	printf("\nIngrese su opcion aqui: ");
+	scanf("%d", eleccion);
+}
+================================================================================
+ */

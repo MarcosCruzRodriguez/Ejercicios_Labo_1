@@ -1,0 +1,86 @@
+/*
+ * empleados.c
+ *
+ *  Created on: 18 sep. 2022
+ *      Author: rodri
+ */
+
+#include "empleados.h"
+
+int inicializacionArray(int legajos[], int edad[], int salario[], int sexo[], int size, int valor)
+{
+	int retorno = 0;
+
+	if(legajos != NULL && edad != NULL && salario != NULL && sexo != NULL)
+	{
+		if(size > 0)
+		{
+			for(int i = 0; i < size; i++)
+			{
+				legajos[i] = valor;
+			}
+			retorno = 1;
+		}
+	}
+	return retorno;
+}
+
+
+void ingresoDatos(int legajos[], int edad[], int salario[], int sexo[], int size, int *contadorNoBinario)
+{
+	for(int i = 0; i < size; i++)
+	{
+		printf("Ingrese los ultimos cuatro digitos del legajo: \n");
+		scanf("%d",&legajos[i]);
+		while(legajos[i] < 1000 || legajos[i] > 9999)
+		{
+			printf("Reingrese los ultimos cuatro digitos del legajo: \n");
+			scanf("%d",&legajos[i]);
+		}
+		printf("Ingrese la edad del empleado: \n");
+		scanf("%d",&edad[i]);
+		while(edad[i] < 18)
+		{
+			printf("Reingrese la edad del empleado: \n");
+			scanf("%d",&edad[i]);
+		}
+		printf("Ingrese el salario del empleado: \n");
+		scanf("%d",&salario[i]);
+		while(salario[i] < 1)
+		{
+			printf("Reingrese el salario del empleado: \n");
+			scanf("%d",&salario[i]);
+		}
+
+		printf("Ingrese el sexo del empleado: \n"
+				"1. Femenino\n"
+				"2. Masculino\n"
+				"3. No binario\n");
+		scanf("%d",&sexo[i]);
+		while(sexo[i] < 1 || sexo[i] > 3)
+		{
+			printf("Ingrese el sexo del empleado: \n"
+					"1. Femenino\n"
+					"2. Masculino\n"
+					"3. No binario\n");
+			scanf("%d",&sexo[i]);
+		}
+
+		if(sexo[i] == 2)
+		{
+			*contadorNoBinario += 1;
+		}
+	}
+}
+
+void promediosSalario(int salario[], int size, int *promedio)
+{
+	int acumulador = 0;
+
+	for(int i = 0; i < size; i++)
+	{
+		acumulador += salario[i];
+	}
+
+	*promedio = acumulador / size;
+}

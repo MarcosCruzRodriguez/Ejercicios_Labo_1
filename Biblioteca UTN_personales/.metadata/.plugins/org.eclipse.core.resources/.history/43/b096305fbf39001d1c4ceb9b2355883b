@@ -1,0 +1,54 @@
+/*
+ ============================================================================
+ 	 	 	 MI							 ..					 ..
+ ------- BIBLIOTECA ---------------------[]------------------[]--------------
+ 	 	 	UTN							 ..					 ..
+ 	   	  personal						....			    ....
+ ============================================================================
+ */
+
+//Bibliotecas propias
+#include "biblioteca_utn.h"
+#define CANTIDAD 100
+
+int main(void)
+{
+	setbuf(stdout, NULL);
+
+	//inicializar array con un valor predeterminado
+	int array[CANTIDAD];
+	int error;
+	inicializacionArray(array,CANTIDAD,-1);
+	if(error == 1)
+	{
+		printf("Anda joya\n");
+	}
+
+	//carga de valores, numeros en este caso
+	cargaValores(array,CANTIDAD);
+
+	//ejemplo de menu - formato -
+	//menuPrincipal();
+
+	//acumulo valores ingresados por el usuario y los traigo por un puntero
+	int resultado;
+	acumularValores(array,CANTIDAD,&resultado);
+
+	//los numeros ingresados los acomodo de forma creciente
+	numerosCreciente(array,CANTIDAD);
+
+	//los numeros ingresados los acomodo de forma decreciente
+	numerosDecreciente(array,CANTIDAD);
+
+	//
+	ingresoNombreApellido();
+
+	//juntos los nombres y apellidos ingresados y formo un nombre completo
+	//con mayusculas en cada en cada uno de los nombres y apellidos
+	char nombre[CANTIDAD];
+	char apellido[CANTIDAD];
+	char nombreCompleto[CANTIDAD];
+	formarApellidoNombre(nombre,apellido,nombreCompleto);
+
+	return 0;
+}

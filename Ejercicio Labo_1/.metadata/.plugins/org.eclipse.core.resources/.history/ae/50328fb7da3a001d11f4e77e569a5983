@@ -1,0 +1,24 @@
+/*
+ * letras.c
+ *
+ *  Created on: 22 sep. 2022
+ *      Author: rodri
+ */
+
+#include "letras.h"
+
+int esLetraConEspacio(char *pResultado)
+{
+	int retorno = 0;
+	int largo;
+
+	largo = strlen(*pResultado);
+	*pResultado[largo-1] = '\0';
+
+	for(int i = 0; i < largo; i++)
+	{
+
+	}
+
+	return retorno;
+}

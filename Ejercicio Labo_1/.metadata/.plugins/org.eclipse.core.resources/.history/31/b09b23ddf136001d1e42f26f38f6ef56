@@ -1,0 +1,80 @@
+/*
+ * listado_de_creciente.c
+ *
+ *  Created on: 17 sep. 2022
+ *      Author: rodri
+ */
+
+#include "listado_de_creciente.h"
+
+int inicializacionArray(int arrayNumeros[], int size, int valor)
+{
+	int retorno = 0;
+
+	if(arrayNumeros != NULL && size > 0)
+	{
+		for(int i = 0; i < size; i++)
+		{
+			arrayNumeros[i] = valor;
+		}
+		retorno = 1;
+	}
+	return retorno;
+}
+
+void pedirValores(int arrayNumeros[], int size)
+{
+	for(int i = 0; i < size; i++)
+	{
+		printf("\nIngrese un numero: \n");
+		scanf("%d",&arrayNumeros[i]);
+	}
+}
+
+void listadoNumeros(int arrayNumeros[], int size)
+{
+	int auxiliar;
+
+	for(int i = 0; i < size-1; i++)
+	{
+		for(int j = i+1; j < size; j++)
+		{
+			if(arrayNumeros[i] > -1)
+			{
+				if(arrayNumeros[i] > arrayNumeros[j])
+				{
+					auxiliar = arrayNumeros[i];
+					arrayNumeros[i] = arrayNumeros[j];
+					arrayNumeros[j] = auxiliar;
+				}
+			}
+			else
+			{
+				if(arrayNumeros[i] > arrayNumeros[j])
+				{
+					auxiliar = arrayNumeros[i];
+					arrayNumeros[i] = arrayNumeros[j];
+					arrayNumeros[j] = auxiliar;
+				}
+			}
+
+		}
+	}
+}
+
+void imprimirLista(int arrayNumeros[], int size)
+{
+
+	for(int i = 0; i < size; i++)
+	{
+		if(arrayNumeros[i] > -1)
+		{
+			printf(", %d\n",arrayNumeros[i]);
+		}
+		else
+		{
+			printf(", %d\n",arrayNumeros[i]);
+
+		}
+	}
+}

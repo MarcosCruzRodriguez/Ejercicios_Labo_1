@@ -1,0 +1,37 @@
+/*
+ ============================================================================
+ Marcos Cruz Rodriguez, Div D
+ Ejercicio 6-3 ordenamiento
+
+ Realizar un programa que permita el ingreso de datos de 15 empleados
+ legajo (coincidente con el índice), edad, salario, sexo (1-Femenino, 2-Masculino, 3-No
+ binario). Realizar carga secuencial. Calcular el sueldo promedio. Listar a los
+ empleados no binarios.
+ ============================================================================
+ */
+
+#include "empleados.h"
+#define CANTIDAD 150
+
+int main(void)
+{
+	setbuf(stdout, NULL);
+	int legajo[CANTIDAD];
+	int edad[CANTIDAD];
+	int salario[CANTIDAD];
+	char sexo[CANTIDAD];
+	int error;
+
+	error = inicializacionArray(legajo,edad,salario,CANTIDAD,0);
+
+	if(error == 1)
+	{
+		ingresoDatos(legajo,edad,salario,sexo,CANTIDAD);
+		for(int i = 0; i < CANTIDAD; i++)
+		{
+			printf("legajo: %d, edad: %d, salario: %d, sexo: %c",legajo,edad,salario,salario);
+		}
+	}
+
+	return 0;
+}

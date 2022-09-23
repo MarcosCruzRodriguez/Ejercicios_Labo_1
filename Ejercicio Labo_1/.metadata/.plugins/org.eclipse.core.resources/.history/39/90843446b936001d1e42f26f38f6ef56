@@ -1,0 +1,15 @@
+/*
+ * inicuializacion_cero.h
+ *
+ *  Created on: 17 sep. 2022
+ *      Author: rodri
+ */
+#include <stdio.h>
+#include <stdlib.h>
+
+#ifndef INICUIALIZACION_CERO_H_
+#define INICUIALIZACION_CERO_H_
+
+
+
+#endif /* INICUIALIZACION_CERO_H_ */

@@ -1,0 +1,72 @@
+/*
+ * empleados.c
+ *
+ *  Created on: 18 sep. 2022
+ *      Author: rodri
+ */
+
+#include "empleados.h"
+
+int inicializacionArray(int legajos[], int edad[], int salario[], int size, int valor)
+{
+	int retorno = 0;
+
+	if(legajos != NULL && size > 0)
+	{
+		for(int i = 0; i < size; i++)
+		{
+			legajos[i] = valor;
+		}
+		retorno = 1;
+	}
+	return retorno;
+}
+
+
+void ingresoDatos(int *legajos, int *edad, int *salario, char *sexo, int size)
+{
+	int largo;
+
+	for(int i = 0; i < size; i++)
+	{
+		printf("Ingrese los ultimos cuatro digitos del legajo: \n");
+		scanf("%d",&legajos[i]);
+		while(legajos[i] < 1000 || legajos[i] > 9999)
+		{
+			printf("Reingrese los ultimos cuatro digitos del legajo: \n");
+			scanf("%d",&legajos[i]);
+		}
+		printf("Ingrese la edad del empleado: \n");
+		scanf("%d",&edad[i]);
+		while(edad[i] > 18)
+		{
+			printf("Reingrese la edad del empleado: \n");
+			scanf("%d",&edad[i]);
+		}
+		printf("Ingrese el salario del empleado: \n");
+		scanf("%d",&salario[i]);
+		while(salario[i] > 0)
+		{
+			printf("Reingrese el salario del empleado: \n");
+			scanf("%d",&salario[i]);
+		}
+
+		printf("Ingrese su tipo de sexo: \n");
+		fflush(stdin);
+		fgets(sexo,size,stdin);
+		largo = strlen(sexo);
+		sexo[largo-1] = '\0';
+		strlwr(sexo);
+		while(sexo!="masculino" && sexo!="femenino" && sexo!="no binario")
+		{
+			printf("Reingrese su tipo de sexo: \n");
+			fflush(stdin);
+			fgets(sexo,size,stdin);
+			largo = strlen(sexo);
+			sexo[largo-1] = '\0';
+			strlwr(sexo);
+		}
+
+
+	}
+}

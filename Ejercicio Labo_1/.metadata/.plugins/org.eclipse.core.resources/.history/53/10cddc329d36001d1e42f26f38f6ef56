@@ -1,0 +1,15 @@
+/*
+ * calculos_array.h
+ *
+ *  Created on: 17 sep. 2022
+ *      Author: rodri
+ */
+
+#ifndef CALCULOS_ARRAY_H_
+#define CALCULOS_ARRAY_H_
+
+int inicializacionArray(int array[], int size, int valor);
+void pedirValores(int array[], int size);
+void calculosDistintos();
+
+#endif /* CALCULOS_ARRAY_H_ */

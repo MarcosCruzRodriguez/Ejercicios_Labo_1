@@ -1,0 +1,5 @@
+18:31:07 **** Incremental Build of configuration Debug for project Structs_practica 01 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Structs_practica 01.o" "..\\src\\Structs_practica 01.c" 
+gcc -o "Structs_practica 01.exe" "src\\Structs_practica 01.o" 
+Info: Nothing to build for Structs_practica 01

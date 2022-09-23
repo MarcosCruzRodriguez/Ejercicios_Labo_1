@@ -1,0 +1,23 @@
+/*
+ * biblioteca_utn.c
+ *
+ *  Created on: 17 sep. 2022
+ *      Author: rodri
+ */
+
+#include "biblioteca_utn.h"
+
+int inicializacionArray(int array[], int size, int valor)
+{
+	int retorno = 0;
+
+	if(array != NULL && size > 0)
+	{
+		for(int i = 0; i < size; i++)
+		{
+			array[i] = valor;
+		}
+		retorno = 1;
+	}
+	return retorno;
+}

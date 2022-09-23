@@ -1,0 +1,92 @@
+/*
+ ============================================================================
+ Marcos Cruz Rodriguez, Div D
+ Variacion del 6-3 structs
+
+ Realizar un programa que permita el ingreso de datos de 10 empleados legajo
+ (coincidente con el índice), edad, salario, nombre completo. Realizar carga
+ secuencial. Calcular el sueldo promedio. Ordenar por orden alfabetico.
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#define LARGO 30
+
+typedef struct {
+	char nombre[LARGO];
+	char appelido[LARGO];
+	char nombreCompleto[LARGO];
+	int legajo;
+	int edad;
+	//int salario;
+}datosEmpleados;
+
+int main(void) {
+	setbuf(stdout, NULL);
+	int largoNombre;
+	int largoApellido;
+
+	datosEmpleados cargaDatos[3];
+
+	for(int i = 0; i < 3; i++)
+	{
+		printf("Ingrese su nombre: \n");
+		fflush(stdin);
+		fgets(cargaDatos[i].nombre,LARGO,stdin);
+
+		largoNombre = strlen(cargaDatos[i].nombre);
+		cargaDatos[i].nombre[largoNombre-1] = '\0';
+
+		printf("Ingrese su apellido: \n");
+		fflush(stdin);
+		fgets(cargaDatos[i].appelido,LARGO,stdin);
+
+		largoApellido = strlen(cargaDatos[i].appelido);
+		cargaDatos[i].appelido[largoApellido-1] = '\0';
+
+		strcpy(cargaDatos[i].nombreCompleto,cargaDatos[i].appelido);
+		strcat(cargaDatos[i].nombreCompleto,", ");
+		strcat(cargaDatos[i].nombreCompleto,cargaDatos[i].nombre);
+
+		strlwr(cargaDatos[i].nombreCompleto);
+
+		//printf("El nombre ingresado es: %s\n",cargaDatos[i].nombreCompleto);
+		//strlen(cargaDatos[i].nombreCompleto);
+
+		cargaDatos[i].nombreCompleto[0] = toupper(cargaDatos[i].nombreCompleto[0]);
+
+		for(int j = 0; j < strlen(cargaDatos[i].nombreCompleto); j++)
+		{
+			if(isspace(cargaDatos[i].nombreCompleto[j]))
+			{
+				j++;
+				cargaDatos[i].nombreCompleto[j] = toupper(cargaDatos[i].nombreCompleto[j]);
+			}
+		}
+
+		printf("Ingrese los ultimos 4 digitos del legajo: \n");
+		scanf("%d",&cargaDatos[i].legajo);
+		while(cargaDatos[i].legajo < 1000 || cargaDatos[i].legajo > 9999)
+		{
+			printf("Reingrese los ultimos 4 digitos del legajo: \n");
+			scanf("%d",&cargaDatos[i].legajo);
+		}
+
+		printf("Ingrese su edad: \n");
+		scanf("%d",&cargaDatos[i].edad);
+		while(cargaDatos[i].edad < 18)
+		{
+			printf("Reingrese su edad: \n");
+			scanf("%d",&cargaDatos[i].edad);
+		}
+
+		printf("El nombre ingresado es: %s\n",cargaDatos[i].nombreCompleto);
+	}
+
+
+
+	return 0;
+}

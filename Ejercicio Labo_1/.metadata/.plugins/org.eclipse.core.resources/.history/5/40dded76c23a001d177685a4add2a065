@@ -1,0 +1,46 @@
+/*
+ * validar_caracteres.c
+ *
+ *  Created on: 22 sep. 2022
+ *      Author: rodri
+ */
+
+#include "validar_caracteres.h"
+
+//validacion de characteres numericos
+int esNumerico(char array[])
+{
+	int i = 0;
+
+	while(array[i] != '\0')
+	{
+		if(array[i] < '0' || array[i] > '9')
+		{
+			return 0;
+		}
+		else
+		{
+			i++;
+		}
+	}
+	return 1;
+}
+
+//validacion de characteres alfabeticos
+int esAlfabetico(char array[])
+{
+	int i = 0;
+
+	while(array[i] != '\0')
+	{
+		if((array[i] != '\0') && (array[i] < 'a' || array[i] > 'z') && (array[i] < 'A' || array[i] > 'Z'))
+		{
+			return 0;
+		}
+		else
+		{
+			i++;
+		}
+	}
+	return 1;
+}

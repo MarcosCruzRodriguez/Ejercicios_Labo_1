@@ -1,0 +1,30 @@
+/*
+ ============================================================================
+ Name        : Mis.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include "biblioteca_utn.h"
+#define CANTIDAD 100
+
+int main(void)
+{
+	setbuf(stdout, NULL);
+
+	//inicializar array con un valor predeterminado
+	int array[CANTIDAD];
+	int error;
+	inicializacionArray(array,CANTIDAD,-1);
+	if(error == 1)
+	{
+		printf("Anda joya\n");
+	}
+
+	//BIBLIOTECAS
+
+	return 0;
+}

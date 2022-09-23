@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;Ordenamiento 6-3/src/nombre_completo.h&apos;" deleteContents="false" description="Delete resource &apos;Ordenamiento 6-3/src/nombre_completo.h&apos;" element1="/Ordenamiento 6-3/src/nombre_completo.h" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1663769791946"/>
+</session>

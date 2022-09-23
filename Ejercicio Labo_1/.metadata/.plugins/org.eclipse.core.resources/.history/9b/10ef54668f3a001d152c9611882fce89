@@ -1,0 +1,17 @@
+/*
+ * datos_alumno.h
+ *
+ *  Created on: 22 sep. 2022
+ *      Author: rodri
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+
+#ifndef DATOS_ALUMNO_H_
+#define DATOS_ALUMNO_H_
+
+
+
+#endif /* DATOS_ALUMNO_H_ */

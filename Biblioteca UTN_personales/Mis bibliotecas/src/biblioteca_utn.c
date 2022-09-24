@@ -157,27 +157,44 @@ void formarApellidoNombre(char* pNombre,char* pApellido,char* pCompleto)
 	}
 }
 
-//validacion de characteres numericos
-int caracteresNumero(char numeroChr[])
-{
+//validacion de numeros y letras
+int caracteresNumero(char numeroChr[]) {
 	int i;
 	int large;
-	int retorno = 0;
+	int retorno = 1;
 
 	large = strlen(numeroChr);
 
-	for(i = 0; i < large; i++)
-	{
-		if(!(isdigit(numeroChr[i])))
-		{
+	for(i = 0; i < large; i++) {
+		if(!(isdigit(numeroChr[i]))) {
 			printf("¡ERROR! ingrese solo numeros\n");
-			return retorno;
+			retorno = 0;
+			break;
 		}
 	}
 
-	retorno = 1;
 	return retorno;
 }
+
+int caracteresLetras(char letrasChr[]) {
+	int i;
+	int large;
+	int retorno = 1;
+
+	large = strlen(letrasChr);
+
+	for(i = 0; i < large; i++) {
+		if(!(isalpha(letrasChr[i]))) {
+			printf("¡ERROR! ingrese solo letras\n");
+			retorno = 0;
+			break;
+		}
+	}
+
+	return retorno;
+}
+
+/*
 //otra variante para saber solo tengo numeros ingresados
 int esNumerico(char array[])
 {
@@ -215,7 +232,7 @@ int esAlfabetico(char array[])
 	}
 	return 1;
 }
-
+*/
 //validacion caracteres alfanumericos
 int validarAlfanumerico(char array[])
 {

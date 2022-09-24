@@ -1,0 +1,20 @@
+/*
+ * struct_empleados.c
+ *
+ *  Created on: 23 sep. 2022
+ *      Author: rodri
+ */
+
+#include "struct_empleados.h"
+
+void menuOpciones(int *opcion)
+{
+	printf("\nMenu principal: \n"
+			"1- ALTAS \n"
+			"2- MODIFICAR \n"
+			"3- BAJA \n"
+			"4- INFORMAR \n");
+	printf("Ingrese una opcion del menu: \n");
+	scanf("%d",opcion);
+
+}

@@ -1,0 +1,29 @@
+/*
+ * empleados_struct.c
+ *
+ *  Created on: 22 sep. 2022
+ *      Author: rodri
+ */
+
+#include "empleados_struct.h"
+
+int caracteresNumero(char numeroChr[])
+{
+	int i;
+	int large;
+	int retorno = 0;
+
+	large = strlen(numeroChr);
+
+	for(i = 0; i < large; i++)
+	{
+		if(!(isdigit(numeroChr[i])))
+		{
+			printf("¡ERROR! ingrese solo numeros\n");
+			return retorno;
+		}
+	}
+
+	retorno = 1;
+	return retorno;
+}

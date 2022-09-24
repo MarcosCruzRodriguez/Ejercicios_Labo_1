@@ -1,0 +1,23 @@
+/*
+ ============================================================================
+ Marcos Cruz Rodriguez, Div D
+ Ejercicio 9-2 structs
+
+ Una empresa requiere un sistema para administrar su nómina de empleados.
+ Se sabe que dicha nómina bajo ninguna circunstancia superara los 300
+ empleados.
+ El sistema deberá tener el siguiente menú de
+ opciones:
+ ============================================================================
+ */
+
+#include "struct_empleados.h"
+
+int main(void) {
+	setbuf(stdout, NULL);
+
+	sEmployers loadingData[300];
+
+
+	return 0;
+}

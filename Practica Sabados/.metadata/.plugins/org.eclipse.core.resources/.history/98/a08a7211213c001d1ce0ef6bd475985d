@@ -1,0 +1,33 @@
+/*
+ ============================================================================
+ Name        : Structs_practica.c
+ Author      : 
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#define LARGO 30
+#define TAM 3
+
+typedef struct {
+	char nombre[LARGO];
+	char apellido[LARGO];
+	char nombreCompleto[LARGO];
+	/*int notaProgramacion;
+	int notaMatematica;
+	int notaIngles;
+	float promedio;*/
+}datosAlumno;
+
+int main(void) {
+	setbuf(stdout, NULL);
+
+
+	return 0;
+}

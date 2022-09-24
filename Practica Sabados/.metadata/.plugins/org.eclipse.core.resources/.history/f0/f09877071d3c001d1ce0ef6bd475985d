@@ -1,0 +1,44 @@
+/*
+ ============================================================================
+ Marcos Cruz Rodriguez, Div D
+ Variacion del 6-3 structs
+
+ Realizar un programa que permita el ingreso de datos de 10 empleados legajo
+ (coincidente con el índice), edad, salario, nombre completo. Realizar carga
+ secuencial. Calcular el sueldo promedio. Ordenar por orden alfabetico.
+ ============================================================================
+ */
+
+#include "empleados_struct.h"
+
+int main(void) {
+	setbuf(stdout, NULL);
+
+	char ingresoNumeros[20];
+	char ingresoLetras[20];
+	int errorChrNumero;
+	int errorLetras;
+
+	do {
+		printf("Ingrese un numero: \n");
+		scanf("%s",ingresoNumeros);
+
+		errorChrNumero = caracteresNumero(ingresoNumeros);
+
+	}while(errorChrNumero == 0);
+
+	printf("Los datos ingresados son numeros\n");
+
+	do {
+		printf("Ingrese letras: \n");
+		fflush(stdin);
+
+
+		errorLetras = caracteresLetras(ingresoLetras);
+
+	}while(errorLetras == 0);
+
+	printf("Los datos ingresados son letras\n");
+
+	return 0;
+}

@@ -8,21 +8,12 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
-#define LARGO 30
-#define TAM 3
+#define TAM 20
 
 #ifndef EMPLEADOS_STRUCT_H_
 #define EMPLEADOS_STRUCT_H_
 
-typedef struct {
-	char nombre[LARGO];
-	char appelido[LARGO];
-	char nombreCompleto[LARGO];
-	int legajo;
-	int edad;
-	int salario;
-}datosEmpleados;
-
-void cargarDatos(datosEmpleados ingresarDatos, int tam);
+int caracteresNumero(char numeroChr[]);
+int caracteresLetras(char letrasChr[]);
 
 #endif /* EMPLEADOS_STRUCT_H_ */

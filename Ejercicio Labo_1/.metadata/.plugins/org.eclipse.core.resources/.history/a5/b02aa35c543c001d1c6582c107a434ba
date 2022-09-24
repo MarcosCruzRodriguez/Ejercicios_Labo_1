@@ -1,0 +1,22 @@
+/*
+ * datos_alumno.c
+ *
+ *  Created on: 22 sep. 2022
+ *      Author: rodri
+ */
+
+#include "datos_alumno.h"
+
+void cargarDatos(sAlumno ingresoDatos)
+{
+	int largo;
+
+	printf("Ingrese su nombre: \n");
+	fflush(stdin);
+	fgets(ingresoDatos.nombre,LARGO,stdin);
+
+	largo = strlen(ingresoDatos.nombre);
+	ingresoDatos.nombre[largo-1] = '\0';
+
+	ingresoDatos.nombre[0] = toupper(ingresoDatos.nombre[0]);
+}

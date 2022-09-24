@@ -11,17 +11,23 @@
 
 #include "datos_alumno.h"
 
-int main(void)
-{
+int main(void) {
 	setbuf(stdout, NULL);
+	int inicializarOK;
+	int contadorAprobadas = 0;
+	float valorRetorno;
 
-	datosAlumno datosIngresados = ingresarDatos();
+	sAlumno datosAlumno;
 
-	mostrarDatos(datosIngresados);
-	datosIngresados.promedio = calcularPromedio(datosIngresados);
+	inicializarOK = inicializacionArray(datosAlumno,LARGO,-1);
 
-	printf("El promedio de %s, es de: %.2f\n",datosIngresados.nombre,datosIngresados.promedio);
+	if(inicializarOK == 1) {
+		cargarDatos(&datosAlumno,LARGO,CANT_MATERIAS);
+		notasAprobadas(&datosAlumno,CANT_MATERIAS,&contadorAprobadas);
+		valorRetorno = promedioNotas(&datosAlumno,contadorAprobadas);
 
+		printf("El promedio de las notas aprobadas es: %.2f\n",valorRetorno);
+	}
 
 	return 0;
 }

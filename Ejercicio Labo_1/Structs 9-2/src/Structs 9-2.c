@@ -11,11 +11,48 @@
  ============================================================================
  */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "struct_empleados.h"
 
 int main(void) {
 	setbuf(stdout, NULL);
+	int opciones;
+	int inicializarOK;
+	sEmpleados cargandoDatos[CANTIDAD];
+
+	inicializarOK = inicializarEmpleado(cargandoDatos);
+
+	if(inicializarOK == 1)
+	{
+		do
+		{
+			menuOpciones(&opciones);
+
+			switch(opciones)
+			{
+				case 1:
+
+					break;
+				case 2:
+
+					break;
+				case 3:
+
+					break;
+				case 4:
+
+					break;
+				case 5:
+
+					break;
+				default:
+					printf("¡ERROR! Ingrese una opcion valida\n");
+					break;
+			}
+
+			}while(opciones != 5);
+	}
+
+
 
 
 

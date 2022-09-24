@@ -1,0 +1,18 @@
+/*
+ * struct_empleados.c
+ *
+ *  Created on: 23 sep. 2022
+ *      Author: rodri
+ */
+
+#include "struct_empleados.h"
+
+void menuOpciones()
+{
+	printf("\nMenu principal: \n"
+			"1- Iniciar \n"
+			"2- Procesar \n"
+			"3- Finalizar \n"
+			"4- Salir \n");
+
+}

@@ -7,61 +7,63 @@
 
 #include "datos_alumno.h"
 
-datosAlumno ingresarDatos()
+int inicializacionArray(sAlumno ingresoDatos, int tam, int valor)
 {
-	int largoNombre;
+	int retorno = 0;
 
-	datosAlumno cargaDatos;
+	if(ingresoDatos.materias != NULL && tam > 0)
+	{
+		for(int i = 0; i < tam; i++)
+		{
+			ingresoDatos.materias[i] = valor;
+		}
+		retorno = 1;
+	}
+	return retorno;
+}
+
+void cargarDatos(sAlumno* ingresoDatos, int tam, int cantM) {
+	int largoNombre;
 
 	printf("Ingrese su nombre: \n");
 	fflush(stdin);
-	fgets(cargaDatos.nombre,LARGO,stdin);
+	fgets(ingresoDatos->nombre,LARGO,stdin);
 
-	largoNombre = strlen(cargaDatos.nombre);
-	cargaDatos.nombre[largoNombre-1] = '\0';
+	largoNombre = strlen(ingresoDatos->nombre);
+	ingresoDatos->nombre[largoNombre-1] = '\0';
 
-	cargaDatos.nombre[0] = toupper(cargaDatos.nombre[0]);
+	ingresoDatos->nombre[0] = toupper(ingresoDatos->nombre[0]);
 
-	printf("Ingrese la primera nota: \n");
-	scanf("%d",&cargaDatos.materiaUno);
-	while(cargaDatos.materiaUno < 1 || cargaDatos.materiaUno > 10)
-	{
-		printf("Reingrese la primera nota: \n");
-		scanf("%d",&cargaDatos.materiaUno);
+	for(int i = 0; i < cantM; i++) {
+		printf("Ingrese la nota de sus materias\n"
+				"Materia: %d\n",i+1);
+		scanf("%d",&ingresoDatos->materias[i]);
+		while(ingresoDatos->materias[i] < 1 || ingresoDatos->materias[i] > 10) {
+			printf("Ingrese la nota de sus materias\n"
+					"Materia: %d\n",i+1);
+			scanf("%d",&ingresoDatos->materias[i]);
+		}
 	}
-	printf("Ingrese la segunda nota: \n");
-	scanf("%d",&cargaDatos.materiaDos);
-	while(cargaDatos.materiaDos < 1 || cargaDatos.materiaDos > 10)
-	{
-		printf("Reingrese la segunda nota: \n");
-		scanf("%d",&cargaDatos.materiaDos);
-	}
-	printf("Ingrese la tercera nota: \n");
-	scanf("%d",&cargaDatos.materiaTres);
-	while(cargaDatos.materiaTres < 1 || cargaDatos.materiaTres > 10)
-	{
-		printf("Reingrese la tercera nota: \n");
-		scanf("%d",&cargaDatos.materiaTres);
-	}
-
-	return cargaDatos;
 }
 
-void mostrarDatos(datosAlumno datos)
-{
-	printf("El nombre es: %s\n",datos.nombre);
-	printf("Su primera nota fue: %d\n",datos.materiaUno);
-	printf("Su segunda nota fue: %d\n",datos.materiaDos);
-	printf("Su tercera nota fue: %d\n",datos.materiaTres);
+void notasAprobadas(sAlumno* sumaMaterias, int cantM, int *contadorMateriasAprobadas) {
+	int acumulador = 0;
+
+	for(int i = 0; i < cantM; i++) {
+		if(sumaMaterias->materias[i] > 6) {
+			acumulador += sumaMaterias->materias[i];
+			*contadorMateriasAprobadas += 1;
+		}
+	}
+	sumaMaterias->sumaNotas = acumulador;
+	printf("%d\n",*contadorMateriasAprobadas);
 }
 
-float calcularPromedio(datosAlumno datos)
-{
-	float promedioCalculado;
+float promedioNotas(sAlumno* promedioMaterias, int contadorAprobadas) {
+	float auxPromedio;
 
-	datos.sumaNotas = datos.materiaUno + datos.materiaDos + datos.materiaTres;
+	auxPromedio = (float)promedioMaterias->sumaNotas / contadorAprobadas;
 
-	promedioCalculado = (float)datos.sumaNotas / 3;
+	return auxPromedio;
 
-	return promedioCalculado;
 }

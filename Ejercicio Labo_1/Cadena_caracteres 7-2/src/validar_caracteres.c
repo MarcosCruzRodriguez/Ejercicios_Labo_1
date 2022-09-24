@@ -44,7 +44,7 @@ int validarTelefono(char array[])
 			printf("¡ERROR!\n");
 			return retorno;
 		}
-		if(array[0] != 52)
+		if(array[0] != 52) // 52 = '4'
 		{
 			printf("El primer numero que debe ingresar es 4\n");
 			return retorno;

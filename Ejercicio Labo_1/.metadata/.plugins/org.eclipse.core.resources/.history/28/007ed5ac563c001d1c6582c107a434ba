@@ -1,0 +1,26 @@
+/*
+ * datos_alumno.h
+ *
+ *  Created on: 22 sep. 2022
+ *      Author: rodri
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
+#define LARGO 30
+#define CANT_MATERIAS 5
+
+#ifndef DATOS_ALUMNO_H_
+#define DATOS_ALUMNO_H_
+
+typedef struct {
+	char nombre[LARGO];
+	int materias[CANT_MATERIAS];
+	int sumaNotas;
+	float promedio;
+}sAlumno;
+
+void cargarDatos(sAlumno* ingresoDatos, int tam, int cantM);
+
+#endif /* DATOS_ALUMNO_H_ */
